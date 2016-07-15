@@ -21,7 +21,7 @@ exports.generate = function (req, res) {
             contents = contents.toString('utf8');
 
             // replace page name, and then dump to output.
-            contents = contents.replace('{{PAGE_NAME}}', page);
+            contents = contents.replace('{{PAGE_NAME}}', page.split('.')[0]);
             res.writeHead(200, { "Content-Type": "text/html" });
             res.end(contents);
         }
